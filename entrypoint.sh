@@ -1,6 +1,9 @@
 #!/bin/sh -l
+#
+# This script is used to send email using an SMTP email agent.
+# This email agent takes the values for the flags from the workflow where it is used.
+#
 
-# curl request for the slack webhook webhook: curl POST, headers, data (slack json obj), slack webhook
 if [ "${INPUT_JOB_STATUS}" = 'success' ]
 then
   export INPUT_DISPLAY_IMAGE_URL='https://media.giphy.com/media/ekwEeLxb7G4DW44YaK/giphy.gif'
