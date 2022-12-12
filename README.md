@@ -2,7 +2,7 @@
 
 This project is designed to create custom email notifications via github actions.
 
-To add this email-notification-action to your builds, just add the following in your worflow file :
+To add this email-notification-action to your builds, just add the following in your workflow file:
 
 ## Usage
 
