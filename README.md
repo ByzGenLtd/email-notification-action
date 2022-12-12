@@ -8,13 +8,13 @@ To add this email-notification-action to your builds, just add the following in 
 
 ```
    - name: Send email notification
-     if: github.ref == 'refs/heads/master'
+     if: github.ref == 'refs/heads/master' && always()
      uses: byzgenltd/email-notification-action@v1
      with:
-       from_email: 'xyz@gmail.com'
-       to_email: 'abc@gmail.com'
-       subject: '<email subject>'
+       from_email: '<sender's email address>'
+       to_email: '<receiver's email address>'
+       subject: ${{ github.event.head_commit.message }}
        authorised_username: '<authorised username>'
        authorised_password: '<authorised_password>'
-       message: '<email message body>'
+       job_status: ${{ job.status }}
 ```

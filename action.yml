@@ -17,8 +17,8 @@ inputs:
   authorised_password:
     description: 'authorised password for SMTP authentication'
     required: true
-  message:
-    description: 'message body of the email'
+  job_status:
+    description: 'the success status of the job in the pipeline'
     required: true
 
 runs:
@@ -27,7 +27,7 @@ runs:
   args:
     - ${{ inputs.from_email }}
     - ${{ inputs.to_email }}
-    - ${{ input.subject }}
+    - ${{ inputs.subject }}
     - ${{ inputs.authorised_username }}
     - ${{ inputs.authorised_password }}
-    - ${{ inputs.message }}
+    - ${{ inputs.job_status }}
