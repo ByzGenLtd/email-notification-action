@@ -1,0 +1,32 @@
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  from_email:
+    description: 'sender of the email'
+    required: true
+  to_email:
+    description: 'receiver of the email'
+    required: true
+  subject:
+    description: 'subject of the email'
+    required: true
+  authorised_username:
+    description: 'authorised username for SMTP authentication'
+    required: true
+  authorised_password:
+    description: 'authorised password for SMTP authentication'
+    required: true
+  job_status:
+    description: 'the success status of the job in the pipeline'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.from_email }}
+    - ${{ inputs.to_email }}
+    - ${{ inputs.subject }}
+    - ${{ inputs.authorised_username }}
+    - ${{ inputs.authorised_password }}
+    - ${{ inputs.job_status }}
