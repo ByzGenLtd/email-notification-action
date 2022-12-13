@@ -1,23 +1,29 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Send Email Notification'
+description: 'Send email for the github build'
 inputs:
   from_email:
-    description: 'sender of the email'
+    description: 'Sender of the email'
     required: true
   to_email:
-    description: 'receiver of the email'
+    description: 'Receiver of the email'
     required: true
   subject:
-    description: 'subject of the email'
+    description: 'Subject of the email'
     required: true
   authorised_username:
-    description: 'authorised username for SMTP authentication'
+    description: 'Authorised username for SMTP authentication'
     required: true
   authorised_password:
-    description: 'authorised password for SMTP authentication'
+    description: 'Authorised password for SMTP authentication'
     required: true
   job_status:
-    description: 'the success status of the job in the pipeline'
+    description: 'The success status of the job in the pipeline'
+    required: true
+  server_address:
+    description: 'The SMTP address to connect to'
+    required: true
+  server_port:
+    description: 'The SMTP port to connect to'
     required: true
 
 runs:
@@ -30,3 +36,5 @@ runs:
     - ${{ inputs.authorised_username }}
     - ${{ inputs.authorised_password }}
     - ${{ inputs.job_status }}
+    - ${{ inputs.server_address }}
+    - ${{ inputs.server_port }}
