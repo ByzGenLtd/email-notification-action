@@ -18,7 +18,7 @@ envsubst < /message_template.html > /message.html
 
 sendemail -f ${INPUT_FROM_EMAIL} \
           -t ${INPUT_TO_EMAIL} \
-          -s "${SERVER_ADDRESS}:${SERVER_PORT}"  \
+          -s "${INPUT_SERVER_ADDRESS}:${INPUT_SERVER_PORT}"  \
           -v -v \
           -o tls=yes \
           -u ${INPUT_JOB_STATUS} : ${INPUT_SUBJECT} \
