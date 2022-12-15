@@ -14,6 +14,10 @@ then
 
 fi # else cancelled
 
+#Retrieving latest tag version
+git config --global --add safe.directory '/github/workspace'
+export TAG_VERSION=$(git describe --tag --abbrev=0)
+
 envsubst < /message_template.html > /message.html
 
 sendemail -f ${INPUT_FROM_EMAIL} \
