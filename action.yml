@@ -25,9 +25,6 @@ inputs:
   server_port:
     description: 'The SMTP port to connect to'
     required: true
-  tag_version:
-    description: 'tag version of the release'
-    required: true
 
 runs:
   using: 'docker'
@@ -41,4 +38,3 @@ runs:
     - ${{ inputs.job_status }}
     - ${{ inputs.server_address }}
     - ${{ inputs.server_port }}
-    - ${{ inputs.tag_version }}

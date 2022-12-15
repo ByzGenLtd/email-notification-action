@@ -9,7 +9,7 @@ To add this email-notification-action to your builds, just add the following in 
 ```
    - name: Send email notification
      if: github.ref == 'refs/heads/master' && always()
-     uses: byzgenltd/email-notification-action@v2
+     uses: byzgenltd/email-notification-action@v3
      with:
        from_email: '<sender's email address>'
        to_email: '<receiver's email address>'
